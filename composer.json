@@ -1,0 +1,27 @@
+{
+    "name": "root/lesson4",
+    "description": "homework #4",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "src/Controllers",
+            "Repositories\\": "src/Repositories",
+            "Views\\": "src/Views",
+            "Entities\\": "src/Entities",
+            "Faker\\": "/vendor/fzaninotto/faker/src/Faker"
+        }
+    },
+
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "ext-mysqlnd": "*",
+        "twig/twig": "^2.0@dev",
+        "fzaninotto/faker": "^1.6"
+    },
+    "authors": [
+        {
+            "name": "Eugene Pavlyuk",
+            "email": "sentiq22@gmail.com"
+        }
+    ]
+}

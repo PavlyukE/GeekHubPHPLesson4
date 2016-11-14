@@ -1,0 +1,25 @@
+{% include 'header.html.twig' %}
+
+<div class="container">
+    <form method="POST">
+        <div class="row">
+            <label for="name">Name:</label>
+            <input class="form-control " type="text" name="name" value="{{ department.name }}">
+        </div>
+        <div class="row">
+            <label for="university_id">Select university:</label>
+            <select class="form-control" id="university_id" name="university_id">
+                <option value="{{ department.university_id }}">{{ university.name }}</option>
+                {% for key, university in universities %}
+                <option value="{{ university.id }}">{{ university.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="row">
+            <input class="btn btn-default" type="submit" value="Add">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

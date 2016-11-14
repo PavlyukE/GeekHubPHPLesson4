@@ -1,0 +1,28 @@
+{% include 'header.html.twig' %}
+
+<div class="container">
+    <form method="POST">
+        <div class="row">
+            <label for="name">Name:</label>
+            <input class="form-control " type="text" name="name" value="{{ student.name }}">
+        </div>
+        <div class="row">
+            <label for="name">Surname:</label>
+            <input class="form-control " type="text" name="surname" value="{{ student.surname }}">
+        </div>
+        <div class="row">
+            <label for="name">Email:</label>
+            <input class="form-control " type="text" name="email" value="{{ student.email }}">
+        </div>
+        <div class="row">
+            <label for="name">Telephone:</label>
+            <input class="form-control " type="text" name="telephone" value="{{ student.telephone }}">
+        </div>
+        <div class="row">
+            <input class="btn btn-default" type="submit" value="Update">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% include 'header.html.twig' %}
+
+<div class="container">
+    <form method="POST">
+        <div class="row">
+            <label for="name">Name:</label>
+            <input class="form-control " type="text" name="name" value="{{ department.name }}">
+        </div>
+
+        <div class="row">
+            <input class="btn btn-default" type="submit" value="Update">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

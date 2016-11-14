@@ -1,0 +1,33 @@
+{% include 'header.html.twig' %}
+
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Site</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for key, university in universities %}
+            <tr>
+                <td>{{key+1}}</td>
+                <td>{{ university.name }}</td>
+                <td>{{ university.city }}</td>
+                <td>{{ university.site }}</td>
+                <td><a href="index.php?controller=university&action=edit&id={{university.id}}">Edit</a> </td>
+                <td><a href="index.php?controller=university&action=delete&id={{university.id}}">Delete</a></td>
+            </tr>
+
+        {% endfor %}
+        <a href="index.php?controller=university&action=addNew" class="btn btn-primary" style="margin:10px;">Add new university</a>
+        <a href="index.php?controller=university&action=addFake" class="btn btn-primary" style="margin:10px;">Add fake university</a>
+</div>
+</body>
+</html>
