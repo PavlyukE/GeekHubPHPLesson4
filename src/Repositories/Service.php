@@ -4,7 +4,7 @@ namespace Repositories;
 
 use Faker\Factory;
 
-class ServiceRepository
+class Service
 {
     private $connector;
 
@@ -79,10 +79,11 @@ class ServiceRepository
     {
         for ($i = 1; $i <= $k; ++$i) {
             $faker = Factory::create();
+            $name = strtok($faker->jobTitle, ' ');
             $statement = $this->connector->getPdo()->prepare('
             INSERT INTO departments (name, university_id) 
             VALUES(:name, :university_id)');
-            $statement->bindValue(':name', $faker->jobTitle);
+            $statement->bindValue(':name', $name);
             $statement->bindValue(':university_id', $faker->numberBetween($min = 1, $max = 8));
             $statement->execute();
         }
