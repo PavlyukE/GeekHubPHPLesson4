@@ -10,7 +10,11 @@ class DepartmentRepository implements RepositoryInterface
     {
         $this->connector = $connector;
     }
-
+    /**
+     * Get all departments from db.
+     *
+     * @return mixed
+     */
     public function getAll()
     {
         $statement = $this->connector->getPdo()->prepare('
@@ -22,6 +26,13 @@ class DepartmentRepository implements RepositoryInterface
 
         return $result;
     }
+    /**
+     * Insert new department from db.
+     *
+     * @param $departmentData
+     *
+     * @return void
+     */
     public function insert(array $departmentData)
     {
         $statement = $this->connector->getPdo()->prepare('
@@ -30,9 +41,15 @@ class DepartmentRepository implements RepositoryInterface
         ');
         $statement->bindValue(':name', $departmentData['name']);
         $statement->bindValue(':university_id', $departmentData['university_id']);
-
-        return $statement->execute();
+        $statement->execute();
     }
+    /**
+     * Insert new department from db.
+     *
+     * @param $departmentData
+     *
+     * @return void
+     */
     public function update(array $departmentData)
     {
         $statement = $this->connector->getPdo()->prepare('
@@ -42,9 +59,14 @@ class DepartmentRepository implements RepositoryInterface
         ');
         $statement->bindValue(':name', $departmentData['name'], \PDO::PARAM_STR);
         $statement->bindValue(':id', $departmentData['id'], \PDO::PARAM_INT);
-
-        return $statement->execute();
+        $statement->execute();
     }
+    /**
+     * Get university names
+     *
+     *
+     * @return mixed
+     */
     public function getUniversityNames()
     {
         $statement = $this->connector->getPdo()->prepare('SELECT id, name FROM universities');

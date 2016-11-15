@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use Repositories\ServiceRepository;
+use Repositories\Service;
 
 class ServiceController
 {
@@ -12,7 +12,7 @@ class ServiceController
 
     public function __construct($connector)
     {
-        $this->repository = new ServiceRepository($connector);
+        $this->repository = new Service($connector);
         $this->loader = new \Twig_Loader_Filesystem('src/Views/templates/');
         $this->twig = new \Twig_Environment($this->loader, array(
             'cache' => false,
